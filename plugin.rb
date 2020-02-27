@@ -1,4 +1,4 @@
-# name: Share links
+# name: Share links1
 # about: Add more services to share on.
 # version: 0.1.0
 # author: null
