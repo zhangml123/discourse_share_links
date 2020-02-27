@@ -10,6 +10,6 @@ basic:
      - email
      - renern
      - wechat
-plugin:
+plugins:
   test:
     default: ""
