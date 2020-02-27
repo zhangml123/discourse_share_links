@@ -2,13 +2,13 @@ basic:
   share_links:
     client: true
     type: list
-    default: 'twitter|facebook|email|wechat'
+    default: 'twitter|facebook|email|renren'
     allow_any: false
     choices:
      - twitter
      - facebook
      - email
-     - wechat
+     - renren
 login:
   wechat_qrconnect_client_id444:
     default: ''
