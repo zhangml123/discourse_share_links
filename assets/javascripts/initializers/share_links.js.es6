@@ -6,16 +6,6 @@ export default {
   initialize: function() {
 
     Sharing.addSource({
-      id: 'renren',
-      iconClass: 'fa-renren',
-      generateUrl: function(link, title) {
-        return ("http://widget.renren.com/dialog/share?resourceUrl=" + encodeURIComponent(link) + "&title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(title));
-      },
-      shouldOpenInPopup: true,
-      popupHeight: 628
-    });
-
-    Sharing.addSource({
       id: 'wechat',
       iconClass: 'fa-wechat',
       generateUrl: function(link) {
