@@ -1,3 +1,5 @@
-plugins:
-  test:
-    default: ""
+login:
+  wechat_test:
+    default: ''
+  wechat_test1:
+    default: ''
