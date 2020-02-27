@@ -1,15 +1,3 @@
-basic:
-  share_links:
-    client: true
-    type: list
-    default: 'twitter|facebook|email|renren|wechat'
-    allow_any: false
-    choices:
-     - twitter
-     - facebook
-     - email
-     - renern
-     - wechat
 plugins:
   test:
     default: ""
