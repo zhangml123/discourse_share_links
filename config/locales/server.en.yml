@@ -1,6 +1,0 @@
-# encoding: utf-8
-
-en:
-  site_settings:
-    wechat_test: "Client id for Wechat authentication"
-    wechat_test1: "Client secret for Wechat authentication"
