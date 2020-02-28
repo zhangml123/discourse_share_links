@@ -24,7 +24,7 @@ after_initialize do
         module_size: 4
       )
 
-      render qrcode_svg
+      render html: qrcode_svg
       
     end
   end
