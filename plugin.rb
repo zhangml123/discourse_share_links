@@ -5,4 +5,16 @@
 # url: https://github.com/zhangml123/discourse_share_links
 
 
+def get_qrcode
+  qrcode_svg = RQRCode::QRCode.new("test").as_svg(
+    offset: 0,
+    color: '000',
+    shape_rendering: 'crispEdges',
+    module_size: 4
+  )
 
+  render json: success_json.merge(
+    key: "key",
+    qr: qrcode_svg
+  )
+end
