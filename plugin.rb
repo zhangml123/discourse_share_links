@@ -3,9 +3,18 @@
 # version: 0.1.0
 # author: null
 # url: https://github.com/zhangml123/discourse_share_links
+
+
 after_initialize do
+
+  module ::DiscourseQrcode
+    class Engine < ::Rails::Engine
+      engine_name "discourse_qrcode"
+      isolate_namespace DiscourseQrcode
+    end
+  end	
   require_dependency "application_controller"
-  class ::GetQrcodeController < ::ApplicationController
+  class DiscourseQrcode::GetQrcodeController < ::ApplicationController
     def index
       qrcode_svg = RQRCode::QRCode.new("test").as_svg(
         offset: 0,
@@ -20,7 +29,11 @@ after_initialize do
       )
     end
   end
-  Discourse::Application.routes.prepend do
-      get "/get-qrcode" => "get_qrcode#index"
+  DiscourseQrcode::Engine.routes.draw do
+    get "/get-qrcode" => "get_qrcode#index"
+  end
+
+  Discourse::Application.routes.append do
+    mount ::DiscourseQrcode::Engine, at: "/"
   end
 end
