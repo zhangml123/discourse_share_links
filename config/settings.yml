@@ -9,8 +9,3 @@ basic:
      - facebook
      - email
      - wechat
-login:
-  wechat_qrconnect_client_id444:
-    default: ''
-  wechat_qrconnect_client_secret:
-    default: ''
