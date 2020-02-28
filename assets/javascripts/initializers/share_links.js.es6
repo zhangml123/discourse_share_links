@@ -7,7 +7,7 @@ export default {
 
     Sharing.addSource({
       id: 'wechat',
-      icon: "fab-weixin",
+      icon: "weixin",
       generateUrl: function(link) {
         return ("http://s.jiathis.com/qrcode.php?url=" + encodeURIComponent(link));
       },
