@@ -3,7 +3,7 @@
 # version: 0.1.0
 # author: null
 # url: https://github.com/zhangml123/discourse_share_links
-
+require_dependency "application_controller"
 class GerQrcodeController < ::ApplicationController
   def index
     qrcode_svg = RQRCode::QRCode.new("test").as_svg(
