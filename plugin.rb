@@ -24,10 +24,8 @@ after_initialize do
         module_size: 4
       )
 
-      render json: success_json.merge(
-        key: "key",
-        qr: qrcode_svg
-      )
+      render qrcode_svg
+      
     end
   end
   DiscourseQrcode::Engine.routes.draw do
