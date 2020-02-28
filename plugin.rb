@@ -5,7 +5,7 @@
 # url: https://github.com/zhangml123/discourse_share_links
 after_initialize do
   require_dependency "application_controller"
-  class GetQrcodeController < ::ApplicationController
+  class ::GetQrcodeController < ::ApplicationController
     def index
       qrcode_svg = RQRCode::QRCode.new("test").as_svg(
         offset: 0,
