@@ -15,6 +15,7 @@ after_initialize do
   end	
   require_dependency "application_controller"
   class DiscourseQrcode::GetQrcodeController < ::ApplicationController
+  	skip_before_action :check_xhr, only: [:index]
     def index
       qrcode_svg = RQRCode::QRCode.new("test").as_svg(
         offset: 0,
