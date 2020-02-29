@@ -40,4 +40,8 @@ after_initialize do
   Discourse::Application.routes.append do
     mount ::DiscourseQrcode::Engine, at: "/"
   end
+
+  register_css <<EOF
+    #share-link .actions .sources { max-width: 50% !important; }
+  EOF
 end
