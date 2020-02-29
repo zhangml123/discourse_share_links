@@ -26,7 +26,8 @@ after_initialize do
           shape_rendering: 'crispEdges',
           module_size: 4
         )
-        render html: qrcode_svg.html_safe
+        html = "<div style=\"text-align:center\">" + qrcode_svg + "</div>" 
+        render html: html.html_safe
       else
       	render json:{"status":false}
       end
