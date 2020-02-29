@@ -17,16 +17,19 @@ after_initialize do
   class DiscourseQrcode::GetQrcodeController < ::ApplicationController
   	skip_before_action :check_xhr, only: [:index]
     def index
+      host = request.host
       url = params[:url]
-      qrcode_svg = RQRCode::QRCode.new(url).as_svg(
-        offset: 0,
-        color: '000',
-        shape_rendering: 'crispEdges',
-        module_size: 4
-      )
-
-      render html: qrcode_svg.html_safe
-      
+      if url.include? host
+        qrcode_svg = RQRCode::QRCode.new(url).as_svg(
+          offset: 0,
+          color: '000',
+          shape_rendering: 'crispEdges',
+          module_size: 4
+        )
+        render html: qrcode_svg.html_safe
+      else
+      	render json:{"status":false}
+      end
     end
   end
   DiscourseQrcode::Engine.routes.draw do
