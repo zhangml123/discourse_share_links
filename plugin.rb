@@ -17,7 +17,8 @@ after_initialize do
   class DiscourseQrcode::GetQrcodeController < ::ApplicationController
   	skip_before_action :check_xhr, only: [:index]
     def index
-      qrcode_svg = RQRCode::QRCode.new("test").as_svg(
+      url = params[:url]
+      qrcode_svg = RQRCode::QRCode.new(url).as_svg(
         offset: 0,
         color: '000',
         shape_rendering: 'crispEdges',
